@@ -7,8 +7,11 @@ public class Ball extends Sprite {
 	// Constructor
 	public Ball() {
 		// TODO: Set width to Settings.BALL_WIDTH
+		settings.BALL_WIDTH();
 		// TODO: Set width to Settings.BALL_HEIGHT
+		settings.BALL_HEIGHT();
 		// TODO: Call resetPosition
+		resetPosition();
 	}
 	
 	/**
@@ -18,11 +21,14 @@ public class Ball extends Sprite {
 	public void resetPosition() {
 		setX(Settings.INITIAL_BALL_X);
 		// TODO: Set the balls y by using the INITIAL_BALL_Y (see above)
+		setY(Settings.INITIAL_BALL_Y);
 	}
 	
 	public void update() {
 		x += xVelocity;
 		// TODO: Increase the y variable by yVelocity (see above)
+		y += yVelocity;
+		
 		
 		// Bounce off left side of screen
 		if(x <= 0) {
@@ -46,16 +52,18 @@ public class Ball extends Sprite {
 	
 	public void setXVelocity(int x) {
 		// TODO: Set the x velocity
+		XVelocity = x;
 	}
 	public void setYVelocity(int y) {
 		// TODO: Set the y velocity
+		YVelocity = y;
 	}
 	
 	public int getXVelocity() {
-		return 0;	// TODO: Return the x velocity
+		return XVelocity;	// TODO: Return the x velocity
 	}
 	public int getYVelocity() {
-		return 0;	// TODO: Return the y velocity
+		return YVelocity;	// TODO: Return the y velocity
 	}
 	
 	public void paint(Graphics g) {

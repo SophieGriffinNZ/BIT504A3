@@ -6,8 +6,11 @@ public class Paddle extends Sprite {
 	
 	public Paddle() {
 		// TODO: Set width to Settings.PADDLE_WIDTH
+		settings.PADDLE_WIDTH();
 		// TODO: Set width to Settings.PADDLE_HEIGHT
+		settings.PADDLE_HEIGHT();
 		// TODO: Call resetPosition
+		resetPosition();
 	}
 	
 	public void resetPosition() {
