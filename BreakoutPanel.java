@@ -30,9 +30,9 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 		timer.start();
 		
 		// TODO: Create a new ball object and assign it to the appropriate variable
-		ball = new Ball();
+		this.ball = new Ball();
 		// TODO: Create a new paddle object and assign it to the appropriate variable
-		paddle = new Paddle();
+		this.paddle = new Paddle();
 		// TODO: Create a new bricks array (Use Settings.TOTAL_BRICKS)
 		bricks = new Brick[Settings.TOTAL_BRICKS];
 		// TODO: Call the createBricks() method
@@ -68,11 +68,13 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 	
 	private void gameOver() {
 		// TODO: Set screen message
+		screenMessage = "Game Over!";
 		stopGame();
 	}
 	
 	private void gameWon() {
 		// TODO: Set screen message
+		screenMessage = "You Won!";
 		stopGame();
 	}
 	

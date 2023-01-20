@@ -6,9 +6,9 @@ public class Paddle extends Sprite {
 	
 	public Paddle() {
 		// TODO: Set width to Settings.PADDLE_WIDTH
-		settings.PADDLE_WIDTH();
-		// TODO: Set width to Settings.PADDLE_HEIGHT
-		settings.PADDLE_HEIGHT();
+		this.width = Settings.PADDLE_WIDTH;
+		// TODO: Set height to Settings.PADDLE_HEIGHT
+		this.height = Settings.PADDLE_HEIGHT;
 		// TODO: Call resetPosition
 		resetPosition();
 	}
@@ -32,5 +32,6 @@ public class Paddle extends Sprite {
 	
 	public void setXVelocity(int vel) {
 		// TODO: Set x velocity
+		this.xVelocity = vel;
 	}
 }
