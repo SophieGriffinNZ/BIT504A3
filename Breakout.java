@@ -17,11 +17,12 @@ public class Breakout extends JFrame{
 		setBackground(BACKGROUND_COLOUR);
 		// TODO: Set resizable to false
 		panel = new BreakoutPanel(this);
-		panel.setSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
 		Border border = BorderFactory.createTitledBorder(Settings.WINDOW_NAME);
 		panel.setBorder(border);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         panel = new BreakoutPanel(this);
+		setResizable(false);
+		setSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
         add(panel);
 		// TODO: Set visible to true
 		setVisible(true);
