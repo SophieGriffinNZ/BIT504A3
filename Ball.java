@@ -66,10 +66,10 @@ public class Ball extends Sprite {
 	}
 	
 	public int getXVelocity() {
-		return xVelocity;	// TODO: Return the x velocity
+		return x;	// TODO: Return the x velocity
 	}
 	public int getYVelocity() {
-		return yVelocity;	// TODO: Return the y velocity
+		return y;	// TODO: Return the y velocity
 	}
 	
 	public void paint(Graphics g) {
