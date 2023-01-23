@@ -16,6 +16,8 @@ public class Paddle extends Sprite {
 	public void resetPosition() {
 		// TODO: Set initial position x and y (use INITIAL_PADDLE_X/Y)
 		// Note: Check Ball.java for a hint
+		this.setX(Settings.INITIAL_PADDLE_X);
+		this.setY(Settings.INITIAL_PADDLE_Y);
 	}
 	
 	public void update() {
@@ -23,7 +25,14 @@ public class Paddle extends Sprite {
 		
 		// TODO: Prevent the paddle from moving outside of the screen
 		// This can be done using two if statements (one for the left side of the screen and one for the right)
-
+if(x <= 0) {
+	x = 0;
+	xVelocity = 0;
+}
+if(x >= Settings.WINDOW_WIDTH - Settings.PADDLE_WIDTH) {
+	x = Settings.WINDOW_WIDTH - Settings.PADDLE_WIDTH;
+	xVelocity = 0;
+}
 	}
 	
 	public void paint(Graphics g) {
