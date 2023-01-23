@@ -1,6 +1,6 @@
-import java.awt.Color;
-
-import javax.swing.JFrame;
+import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 
 public class Breakout extends JFrame{
 	
@@ -13,16 +13,18 @@ public class Breakout extends JFrame{
 	public Breakout() {
 		// TODO: Set the size of the screen (use Settings.WINDOW_WIDTH/HEIGHT)
 		// TODO: Set the title
-		setTitle("WINDOW_NAME");
 		// TODO: Set the background colour to white
 		setBackground(BACKGROUND_COLOUR);
 		// TODO: Set resizable to false
-		setResizable(false);
+		panel = new BreakoutPanel(this);
+		panel.setSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
+		Border border = BorderFactory.createTitledBorder(Settings.WINDOW_NAME);
+		panel.setBorder(border);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         panel = new BreakoutPanel(this);
         add(panel);
 		// TODO: Set visible to true
-        setVisible(true);
+		setVisible(true);
 	}
 
 	public static void main(String[] args) {

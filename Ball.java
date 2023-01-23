@@ -1,4 +1,4 @@
-import java.awt.Graphics;
+import java.awt.*;
 
 public class Ball extends Sprite {
 
@@ -28,24 +28,29 @@ public class Ball extends Sprite {
 		x += xVelocity;
 		// TODO: Increase the y variable by yVelocity (see above)
 		y += yVelocity;
-		
-		
+
 		// Bounce off left side of screen
 		if(x <= 0) {
 			// TODO: Set x to 0 so it does not leave the screen
 			// TODO: Change the x velocity to make the ball go right
+			x = 0;
+			xVelocity = -xVelocity;
 		}
 		
 		// Bounce off right side of screen
 		if(x >= Settings.WINDOW_WIDTH - Settings.BALL_WIDTH) {
 			// TODO: Set x to the right edge of the screen (see the above if condition)
 			// TODO: Change the x velocity to make the ball go left
+			x = Settings.WINDOW_WIDTH - Settings.BALL_WIDTH;
+			xVelocity = -xVelocity;
 		}
 		
 		// Bounce off top of screen
 		if(y <= 0) {
 			// TODO: Set y to 0 so it does not leave the screen
 			// TODO: Change the y velocity to make the ball go downward
+			y = 0;
+			yVelocity = -yVelocity;
 		}
 		
 	}
