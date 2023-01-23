@@ -1,9 +1,9 @@
 import java.awt.Graphics;
 
 public class Brick extends Sprite {
-	
+
 	private boolean broken = false;
-	
+
 	public Brick(int x, int y) {
 		// TODO: Set x using the parameter
 		this.x = x;
@@ -16,16 +16,16 @@ public class Brick extends Sprite {
 	}
 
 	public boolean isBroken() {
-		return broken;	// TODO: Return the correct variable
+		return broken; // TODO: Return the correct variable
 	}
 
 	public void setBroken(boolean b) {
 		// TODO: Set the broken variable using the parameter given
 		this.broken = b;
 	}
-	
+
 	public void paint(Graphics g) {
-		if(!broken) {
+		if (!broken) {
 			g.fillRect(x, y, Settings.BRICK_WIDTH, Settings.BRICK_HEIGHT);
 		}
 	}
