@@ -1,4 +1,4 @@
-import java.awt.Rectangle;
+import java.awt.*;
 
 public class Sprite {
 	
@@ -10,15 +10,12 @@ public class Sprite {
 		this.x = x;
 	}
 	public void setY(int y) { 
-		// TODO
 		this.y = y;
 	}
 	public void setWidth(int width) { 
-		// TODO
 		this.width = width;
 	}
 	public void setHeight(int height) { 
-		// TODO
 		this.height = height;
 	}
 	

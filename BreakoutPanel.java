@@ -1,14 +1,9 @@
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Point;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
-import javax.swing.JPanel;
-import javax.swing.Timer;
 
 public class BreakoutPanel extends JPanel implements ActionListener, KeyListener {
 	
@@ -28,7 +23,10 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 		
 		Timer timer = new Timer(5, this);
 		timer.start();
-		
+
+		this.paddle = new Paddle();
+		bricks = new Brick[Settings.TOTAL_BRICKS];
+		createBricks();
 		// TODO: Create a new ball object and assign it to the appropriate variable
 		this.ball = new Ball();
 		// TODO: Create a new paddle object and assign it to the appropriate variable
@@ -56,6 +54,9 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 	
 	private void paintBricks(Graphics g) {
 		// TODO: Loop through the bricks and call the paint() method
+		for(int i = 0; i < bricks.length; i++) {
+			bricks[i].paint(g);
+		}
 	}
 	
 	private void update() {
@@ -63,6 +64,8 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 			// TODO: Update the ball and paddle
 			collisions();
 			repaint();
+			ball.update();
+			paddle.update();
 		}
 	}
 	
@@ -158,7 +161,10 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
         
         // Draw lives left
         // TODO: Draw lives left in the top left hand corner
-        
+		String livesMessage = "Lives: "+livesLeft;
+		g.setFont(new Font("Arial", Font.BOLD, 8));
+		g.drawString(livesMessage, Settings.LIVES_POSITION_X, Settings.LIVES_POSITION_Y);
+
         // Draw screen message
         if(screenMessage != null) {
         	g.setFont(new Font("Arial", Font.BOLD, 18));
@@ -170,11 +176,18 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO: Set the velocity of the paddle depending on whether the player is pressing left or right
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			paddle.setXVelocity(-1);
+		} else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			paddle.setXVelocity(1);
+		}
+
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO: Set the velocity of the paddle after the player has released the keys
+		paddle.setXVelocity(0);
 	}
 
 	@Override
