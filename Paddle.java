@@ -29,8 +29,8 @@ public class Paddle extends Sprite {
 			x = 0;
 			xVelocity = 0;
 		}
-		if (x >= Settings.WINDOW_WIDTH - Settings.PADDLE_WIDTH) {
-			x = Settings.WINDOW_WIDTH - Settings.PADDLE_WIDTH;
+		if (x >= Settings.WINDOW_WIDTH - (15 + Settings.PADDLE_WIDTH)) {
+			x = Settings.WINDOW_WIDTH - (15 + Settings.PADDLE_WIDTH);
 			xVelocity = 0;
 		}
 	}
